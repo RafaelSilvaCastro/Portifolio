@@ -117,49 +117,23 @@ header>.interface {
 
 /* esrilo carrinho*/
 
-.lista-cadastro{
+.container {
     display: flex;
-    margin: 20px 0;
-    padding:0 20px;
+    justify-content: center;
 }
 
-.lista-cadastro input[type=text]{
-    flex: 1;
-    height: 40px;
-    padding-left: 20px;
-    background-color: white;
-
+.item h2{
+    text-align: center;
 }
-
-.lista-produtos-single{
-    padding: 10px 0;
-    margin: 20px 0;
-    border-bottom: 1px solid white;
+#btn{
     display: flex;
-}
-
-.lista-produtos-single h3{
-    flex: 1;
-    padding: 0 30px;
-}
-
-.container-carrinho h2{
-    margin-left: 20px;
-}
-.soma-produtos h1{
-    margin-left: 20px;
-    color: #ccc;
-}
-
-#limpar-btn{
-    margin-left: 20px;
-    margin-top: 20px;
+    margin: 24px auto 0;
     border-radius: 15px;
     text-transform: uppercase;
     background-color: #9c0000;
     color: #fff;
     font-size: 25px;
-    padding: 10px 40px;
+    padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
     width: auto;
@@ -168,12 +142,80 @@ header>.interface {
     margin-top: 1rem;
 }
 
-#limpar-btn:hover {
-    background-color: #fff;
-    color: #9c0000;
+#btn:hover {
+    filter: brightness(0.8);
 }
 
-#btn-cadastrar{
+.cart-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.table-head-item{
+    text-align: start;
+    margin-top: 100px;
+    border-bottom: 1px solid #959595;
+    padding-bottom: 6px;
+    text-transform: uppercase;
+}
+
+
+.cart-product td{
+    padding: 8px 0;
+
+}
+
+.product-identification{
+    display: flex;
+    align-items: center;
+}
+
+.cart-product-image{
+    width: 200px;
+    height: 150px;   
+}
+
+.cart-product-title{
+    margin-left: 16px;
+    font-size: 18px;
+}
+
+.cart-product-price{
+    font-family: arial;
+    margin: 20px;
+}
+
+.product-qtd-input{
+    width: 48px;
+    height: 34px;
+    border-radius: 6px;
+    border: 2px solid #9c0000;
+    text-align: center;
     background-color: #fff;
-    width: auto;
+}
+
+.remove-product-button{
+    margin-left: 12px;
+    background-color: red;
+    color: white;
+    padding: 10px 8px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.remove-product-button:hover{
+    filter: brightness(0.8);
+}
+
+.card-total-container{
+    border-top: 1px solid #959595;
+    text-align: end;
+    padding: 6px 16px 0 0;
+    font-size: 18px;
+}
+
+.card-total-container strong{
+    margin-right: 12px;
 }
