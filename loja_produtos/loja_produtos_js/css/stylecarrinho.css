@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: #ccc;
+    background-color: black;
+    color: white;
 }
 
 .flex {
@@ -23,7 +24,7 @@ body {
 
 header {
     padding: 10px 2%;
-    background-color: #ccc;
+    background-color: #151313;
     position: absolute;
     top: 0;
     margin-top: auto;
@@ -83,7 +84,7 @@ header>.interface {
     width: 80px;
     font-size: 20px;
     cursor: pointer;
-    color: #fff;
+    color: white;
 }
 
 .nav-icon-container i:first-child {
@@ -126,14 +127,14 @@ header>.interface {
     flex: 1;
     height: 40px;
     padding-left: 20px;
-    background-color: #ccc;
+    background-color: white;
 
 }
 
 .lista-produtos-single{
     padding: 10px 0;
     margin: 20px 0;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid white;
     display: flex;
 }
 
@@ -142,19 +143,37 @@ header>.interface {
     padding: 0 30px;
 }
 
-h3.price-produto{
-    text-align: right;
-    font-size: 17px;
+.container-carrinho h2{
+    margin-left: 20px;
 }
-
-h3.price-produto > span{
-    background-color: #55e4d8;
-    padding: 8px 10px;
-    border-radius: 20px;
+.soma-produtos h1{
+    margin-left: 20px;
     color: #ccc;
 }
 
-.soma-produto{
-    margin: 20px;
-    color: #ccc;
+#limpar-btn{
+    margin-left: 20px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    background-color: #9c0000;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 40px;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+#limpar-btn:hover {
+    background-color: #fff;
+    color: #9c0000;
+}
+
+#btn-cadastrar{
+    background-color: #fff;
+    width: auto;
 }
