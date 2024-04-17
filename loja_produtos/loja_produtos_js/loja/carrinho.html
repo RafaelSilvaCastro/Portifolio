@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +9,19 @@
     <link rel="stylesheet" href="../css/stylecarrinho.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-        <!----------Chamando javaScript------------->
-        <script async src="../js/carrinho.js"></script>
-        <!------------------------------------------>
-    
+    <!----------Chamando javaScript------------->
+    <script async src="../js/carrinho.js"></script>
+    <!------------------------------------------>
+
     <title>Loja | Carrinho</title>
 </head>
+
 <body>
 
-<header>
+    <header>
         <div class="interface" style="margin-left: 150px;">
             <div class="logo">
-            <a href="../loja/loja.html">
+                <a href="../loja/loja.html">
                     <img src="../img/logo.png" alt="Logo Alpha MT">
                 </a>
             </div><!--logo-->
@@ -27,17 +29,23 @@
             <div class="navbar">
                 <div class="header-inner-content">
                     <ul>
-                        <a href="whey.html"><li>Whey Protein</li></a>
-                        <a href="creatina.html"><li>Creatina</li>
-                        <a href="pretreino.html"><li>Pre-Treino</li>
-                        <a href="roupas.html"><li>Roupas</li>
-                        <a href="acessorios.html"><li>Acessorios</li>
+                        <a href="whey.html">
+                            <li>Whey Protein</li>
+                        </a>
+                        <a href="creatina.html">
+                            <li>Creatina</li>
+                            <a href="pretreino.html">
+                                <li>Pre-Treino</li>
+                                <a href="roupas.html">
+                                    <li>Roupas</li>
+                                    <a href="acessorios.html">
+                                        <li>Acessorios</li>
                     </ul>
                 </div>
             </div>
             <div class="nav-icon-container">
-            <a href="carrinho.html"> <i class="bi bi-cart"></i></a>
-            <i class="bi bi-list" id="btn-exp"></i>
+                <a href="carrinho.html"> <i class="bi bi-cart"></i></a>
+                <i class="bi bi-list" id="btn-exp"></i>
             </div>
         </div><!--inteface-->
     </header>
@@ -50,48 +58,49 @@
             <div class="container">
                 <div class="item">
 
-                <h2>Carrinho</h2>
+                    <h2>Carrinho</h2>
 
-                <table class="cart-table">
-                    <thead>
-                        <tr>
-                            <th class="table-head-item fist-col">Item:</th>
-                            <th class="table-head-item second-col">Preço:</th>
-                            <th class="table-head-item third-col">Quantidade:</th>
-                        </tr>
-                    </thead>
+                    <table class="cart-table">
+                        <thead>
+                            <tr>
+                                <th class="table-head-item fist-col">Item:</th>
+                                <th class="table-head-item second-col">Preço:</th>
+                                <th class="table-head-item third-col">Quantidade:</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        <tr class="cart-product">
-                            <td class="product-identification">
-                                <img class="cart-product-image" src="../img/imgprod/blusadefrio.png" alt="blusa1">
-                                <strong class="cart-product-title" >Blusa</strong>
-                            </td>
-                            <td>
-                                <span class="cart-product-price">R$250,00</span>
-                            </td>
-                            <td>
-                                <input class="product-qtd-input" type="number" value="2" min="0">
-                                <button class="remove-product-button" type="button">Remover</button>
-                            </td>
-                        </tr>
-                    </tbody>
+                        <tbody>
+                            <tr class="cart-product">
+                                <td class="product-identification">
+                                    <img class="cart-product-image" src="../img/imgprod/blusadefrio.png" alt="blusa1">
+                                    <strong class="cart-product-title">Blusa</strong>
+                                </td>
+                                <td>
+                                    <span class="cart-product-price">R$250,00</span>
+                                </td>
+                                <td>
+                                    <input class="product-qtd-input" type="number" value="0" min="0">
+                                    <button class="remove-product-button" type="button">Remover</button>
+                                </td>
+                            </tr>
+                        </tbody>
 
-                    <tfoot>
-                        <tr>
-                            <td colspan="3" class="card-total-container">
-                                <strong>Total</strong>
-                                <span>R$250,00</span>
-                            </td>
-                        </tr>
-                    </tfoot>
-                </table>
-           
-            <button type="button" id="btn">Finalizar Compra</button>
-            </div>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3" class="card-total-container">
+                                    <strong>Total</strong>
+                                    <span>R$250,00</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <button type="button" id="btn">Finalizar Compra</button>
+                </div>
             </div>
         </section>
     </main>
-    
+
 </body>
+
 </html>
