@@ -1,5 +1,5 @@
 // Adicionar manipuladores de evento aos botões "ADICIONAR AO CARRINHO"
-const addToCartButtons = document.querySelectorAll(".btn.add-to-cart-btn");
+let addToCartButtons = document.querySelectorAll(".btn.add-to-cart-btn");
 addToCartButtons.forEach(button => {
     button.addEventListener("click", () => {
         // Encontrar o elemento pai do botão (div .produtos-box)
@@ -17,6 +17,7 @@ addToCartButtons.forEach(button => {
     });
 });
 
+
 // Adicionar manipuladores de evento para remoção de produtos e atualização do total
 const removeProductButtons = document.getElementsByClassName("remove-product-button");
 for (var i = 0; i < removeProductButtons.length; i++) {
@@ -29,7 +30,10 @@ for (var i = 0; i < quantityInputs.length; i++) {
 }
 
 // Função para adicionar o produto ao carrinho no armazenamento local
-function addProductToCart(title, price) {
+function addProductToCart() {
+    let title = document.querySelector(".product-title").innerText;
+    let price = document.querySelector(".product-price").innerText;
+
     let newCartProduct = document.createElement("tr");
     newCartProduct.classList.add("cart-product");
 
@@ -47,10 +51,11 @@ function addProductToCart(title, price) {
         </td>
     `;
 
-    const tableBody = document.querySelector(".cart-table tbody");
+    let tableBody = document.querySelector("#tbody-carrinho");
     tableBody.append(newCartProduct);
     updateTotal();
 }
+
 
 // Função para remover um produto do carrinho
 function removeProduct(event) {
