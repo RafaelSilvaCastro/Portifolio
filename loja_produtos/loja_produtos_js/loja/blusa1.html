@@ -17,52 +17,7 @@
 </head>
 
 <body>
-    <nav class="menu-lateral">
-
-        <div class="btn-expandir">
-            <i class="bi bi-list" id="btn-exp"></i>
-        </div>
-
-        <ul>
-            <li class="item-menu">
-                <a href="../usuario/home.html">
-                    <span class="icon"><i class="bi bi-house-door-fill"></i></span>
-                    <span class="txt-link">Inicio</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="../usuario/academias.html">
-                    <span class="icon"><i class="bi bi-geo-alt"></i></span>
-                    <span class="txt-link">Academias</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="../usuario/conta_usuario.html">
-                    <span class="icon"><i class="bi bi-person-circle"></i></span>
-                    <span class="txt-link">Conta</span>
-                </a>
-            </li>
-            <li class="item-menu ativo">
-                <a href="loja.html">
-                    <span class="icon"><i class="bi bi-bag"></i></span>
-                    <span class="txt-link">Loja</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-gear"></i></span>
-                    <span class="txt-link">Suporte</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="../fechar_sessao.html">
-                    <span class="icon"><i class="bi bi-door-open"></i></span>
-                    <span class="txt-link">Sair</span>
-                </a>
-            </li>
-
-        </ul>
-    </nav>
+   
 
     <header>
         <div class="interface" style="margin-left: 150px;">
@@ -138,7 +93,7 @@
                             <h2 class="product-title">BLUSA DE FRIO ALPHA MT</h2>
                             <p class="product-price">R$150,55</p>
                             <p><del>R$170,99</del></p>
-                            <center><button type="button" class="btn"> ADICIONAR AO CARRINHO</button></center>
+                            <center><button type="button" class="btn" onclick="addProductToCart()"> ADICIONAR AO CARRINHO</button></center>
                         </div><!--produtos-box-->
                     </div><!--flex-->
                 </div><!--interface-->
@@ -180,9 +135,9 @@
     </main>
     <br><br><br><br><br><br>
 
-    <script src="../js/menu.js"></script>
+    
     <script src="../js/galery.js"></script>
-    <script async src="../js/carrinho.js"></script>
+    <script src="../js/carrinho.js"></script>
 
 
 

@@ -1,32 +1,5 @@
-//criando verificação para saber se a página HTML carregou
-if (document.readyState == "loading") {
-    document.addEventListener("DOMContentLoaded", ready)
-} else {
-    ready()
-}
-
-function ready() {
-    //funcionalidade do botão de remover
-    const removeProductButtons = document.getElementsByClassName("remove-product-button");
-    for (var i = 0; i < removeProductButtons.length; i++) {
-        removeProductButtons[i].addEventListener("click", removeProduct)
-    }
-
-    //função para mudar a quantidade e somar o valor
-    const quantityInputs = document.getElementsByClassName("product-qtd-input")
-    for (var i = 0; i < quantityInputs.length; i++) {
-        quantityInputs[i].addEventListener("change", updateTotal)
-    }
-
-    //função para adicionar os produtos ao carrinho
-    const addToCartButtons = document.querySelectorAll(".produto");
-    addToCartButtons.forEach(button => {
-        button.addEventListener("click", addProductToCart);
-    });
-}
-
-// Adiciona o manipulador de evento de clique aos botões "ADICIONAR AO CARRINHO"
-const addToCartButtons = document.querySelectorAll(".especialidades .btn");
+// Adicionar manipuladores de evento aos botões "ADICIONAR AO CARRINHO"
+const addToCartButtons = document.querySelectorAll(".btn.add-to-cart-btn");
 addToCartButtons.forEach(button => {
     button.addEventListener("click", () => {
         // Encontrar o elemento pai do botão (div .produtos-box)
@@ -36,25 +9,26 @@ addToCartButtons.forEach(button => {
         const productTitle = productBox.querySelector(".product-title").innerText;
         const productPrice = productBox.querySelector(".product-price").innerText;
 
-        // Adicionar o produto ao carrinho no armazenamento local
-        addToCart(productTitle, productPrice);
+        // Adicionar o produto ao carrinho
+        addProductToCart(productTitle, productPrice);
+
+        // Mostrar alerta
+        alert("Produto adicionado ao carrinho!");
     });
 });
 
-// Função para adicionar o produto ao carrinho no armazenamento local
-function addToCart(title, price) {
-    // Verifica se já existe um carrinho no armazenamento local
-    let cart = localStorage.getItem("cart");
-    cart = cart ? JSON.parse(cart) : [];
-
-    // Adiciona o novo produto ao carrinho
-    cart.push({ title: title, price: price });
-
-    // Atualiza o carrinho no armazenamento local
-    localStorage.setItem("cart", JSON.stringify(cart));
+// Adicionar manipuladores de evento para remoção de produtos e atualização do total
+const removeProductButtons = document.getElementsByClassName("remove-product-button");
+for (var i = 0; i < removeProductButtons.length; i++) {
+    removeProductButtons[i].addEventListener("click", removeProduct);
 }
 
-// Função para adicionar o produto ao carrinho
+const quantityInputs = document.getElementsByClassName("product-qtd-input");
+for (var i = 0; i < quantityInputs.length; i++) {
+    quantityInputs[i].addEventListener("change", updateTotal);
+}
+
+// Função para adicionar o produto ao carrinho no armazenamento local
 function addProductToCart(title, price) {
     let newCartProduct = document.createElement("tr");
     newCartProduct.classList.add("cart-product");
@@ -78,18 +52,19 @@ function addProductToCart(title, price) {
     updateTotal();
 }
 
+// Função para remover um produto do carrinho
 function removeProduct(event) {
     event.target.parentElement.parentElement.remove();
     updateTotal();
-};
+}
 
-// função para somar o valor da compra
+// Função para calcular e atualizar o total do carrinho
 function updateTotal() {
     let totalCarrinho = 0;
     const cartProducts = document.getElementsByClassName("cart-product");
     for (var i = 0; i < cartProducts.length; i++) {
-        const productPrice = cartProducts[i].querySelector(".cart-product-price").innerText.replace("R$", "").replace(",", ".");
-        const productQuantity = cartProducts[i].querySelector(".product-qtd-input").value;
+        const productPrice = parseFloat(cartProducts[i].querySelector(".cart-product-price").innerText.replace("R$", "").replace(",", "."));
+        const productQuantity = parseFloat(cartProducts[i].querySelector(".product-qtd-input").value);
 
         totalCarrinho += productPrice * productQuantity;
     }
