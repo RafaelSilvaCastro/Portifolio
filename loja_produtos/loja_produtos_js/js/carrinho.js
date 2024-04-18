@@ -1,4 +1,4 @@
-//criando verificação para saber se a pagina html carregou
+//criando verificação para saber se a página HTML carregou
 if (document.readyState == "loading") {
     document.addEventListener("DOMContentLoaded", ready)
 } else {
@@ -18,41 +18,64 @@ function ready() {
         quantityInputs[i].addEventListener("change", updateTotal)
     }
 
-    //funçao para adicionar os produtos ao carrinho
-    const addToCardButtons = document.getElementsByClassName("btn-third")
-    for (var i = 0; i < addToCardButtons.length; i++) {
-        addToCardButtons[i].addEventListener("click", addProductToCart)
-    }
+    //função para adicionar os produtos ao carrinho
+    const addToCartButtons = document.querySelectorAll(".produto");
+    addToCartButtons.forEach(button => {
+        button.addEventListener("click", addProductToCart);
+    });
 }
 
-//criando função para adicionar ao carrinho
-function addProductToCart(event) {
-    const button = event.target
-    const productInfos = button.parentElement.parentElement
-    const productImage = productInfos.getElementsByClassName("displayed-img")[0].src
-    const productTitle = productInfos.getElementsByClassName("product-title")[0].innerText
-    const productPrice = productInfos.getElementsByClassName("product-price")[0].innerText
+// Adiciona o manipulador de evento de clique aos botões "ADICIONAR AO CARRINHO"
+const addToCartButtons = document.querySelectorAll(".especialidades .btn");
+addToCartButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        // Encontrar o elemento pai do botão (div .produtos-box)
+        const productBox = button.closest(".produtos-box");
 
-    let newCardProduct = document.createElement("tr")
-    newCardProduct.classList.add("cart-product")
+        // Extrair os detalhes do produto
+        const productTitle = productBox.querySelector(".product-title").innerText;
+        const productPrice = productBox.querySelector(".product-price").innerText;
 
-    newCardProduct.innerHTML =
+        // Adicionar o produto ao carrinho no armazenamento local
+        addToCart(productTitle, productPrice);
+    });
+});
+
+// Função para adicionar o produto ao carrinho no armazenamento local
+function addToCart(title, price) {
+    // Verifica se já existe um carrinho no armazenamento local
+    let cart = localStorage.getItem("cart");
+    cart = cart ? JSON.parse(cart) : [];
+
+    // Adiciona o novo produto ao carrinho
+    cart.push({ title: title, price: price });
+
+    // Atualiza o carrinho no armazenamento local
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Função para adicionar o produto ao carrinho
+function addProductToCart(title, price) {
+    let newCartProduct = document.createElement("tr");
+    newCartProduct.classList.add("cart-product");
+
+    newCartProduct.innerHTML =
         `
         <td class="product-identification">
-            <img class="cart-product-image" src="${productImage}" alt="${productTitle}">
-            <strong class="cart-product-title">${productTitle}</strong>
+            <strong class="cart-product-title">${title}</strong>
         </td>
         <td>
-            <span class="cart-product-price">${productPrice}</span>
+            <span class="cart-product-price">${price}</span>
         </td>
         <td>
             <input class="product-qtd-input" type="number" value="1" min="0">
             <button class="remove-product-button" type="button">Remover</button>
         </td>
-    `
+    `;
 
-    const tableBody = document.querySelector(".cart-table tbody")
-    tableBody.append(newCardProduct)
+    const tableBody = document.querySelector(".cart-table tbody");
+    tableBody.append(newCartProduct);
+    updateTotal();
 }
 
 function removeProduct(event) {
@@ -63,11 +86,10 @@ function removeProduct(event) {
 // função para somar o valor da compra
 function updateTotal() {
     let totalCarrinho = 0;
-    const cartProduts = document.getElementsByClassName("cart-product");
-    for (var i = 0; i < cartProduts.length; i++) {
-        //console.log(cartProduts[i])
-        const productPrice = cartProduts[i].getElementsByClassName("cart-product-price")[0].innerHTML.replace("R$", "").replace(",", ".");
-        const productQuantity = cartProduts[i].getElementsByClassName("product-qtd-input")[0].value;
+    const cartProducts = document.getElementsByClassName("cart-product");
+    for (var i = 0; i < cartProducts.length; i++) {
+        const productPrice = cartProducts[i].querySelector(".cart-product-price").innerText.replace("R$", "").replace(",", ".");
+        const productQuantity = cartProducts[i].querySelector(".product-qtd-input").value;
 
         totalCarrinho += productPrice * productQuantity;
     }

@@ -125,7 +125,7 @@ header>.interface {
 .item h2{
     text-align: center;
 }
-#btn{
+.btn{
     display: flex;
     margin: 24px auto 0;
     border-radius: 15px;
@@ -142,7 +142,7 @@ header>.interface {
     margin-top: 1rem;
 }
 
-#btn:hover {
+.btn:hover {
     filter: brightness(0.8);
 }
 
