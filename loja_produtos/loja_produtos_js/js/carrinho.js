@@ -1,80 +1,70 @@
-// Adicionar manipuladores de evento aos botões "ADICIONAR AO CARRINHO"
-let addToCartButtons = document.querySelectorAll(".btn.add-to-cart-btn");
-addToCartButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        // Encontrar o elemento pai do botão (div .produtos-box)
-        const productBox = button.closest(".produtos-box");
+let carrinho = [];
+let total = 0;
 
-        // Extrair os detalhes do produto
-        const productTitle = productBox.querySelector(".product-title").innerText;
-        const productPrice = productBox.querySelector(".product-price").innerText;
+// Verificar se há itens salvos no localStorage
+const savedCart = JSON.parse(localStorage.getItem("carrinho"));
+if (savedCart) {
+    carrinho = savedCart;
+    atualizarCarrinho();
+}
 
-        // Adicionar o produto ao carrinho
-        addProductToCart(productTitle, productPrice);
-
-        // Mostrar alerta
-        alert("Produto adicionado ao carrinho!");
-    });
-});
-
-
-// Adicionar manipuladores de evento para remoção de produtos e atualização do total
+// Adicionar funcionalidade ao botão de remover
 const removeProductButtons = document.getElementsByClassName("remove-product-button");
-for (var i = 0; i < removeProductButtons.length; i++) {
-    removeProductButtons[i].addEventListener("click", removeProduct);
+for (let button of removeProductButtons) {
+    button.addEventListener("click", removeProduct);
 }
 
-const quantityInputs = document.getElementsByClassName("product-qtd-input");
-for (var i = 0; i < quantityInputs.length; i++) {
-    quantityInputs[i].addEventListener("change", updateTotal);
+function adicionarItem(preco, nome) {
+    // Verificar se o item já está no carrinho
+    const itemIndex = carrinho.findIndex(item => item.nome === nome);
+    if (itemIndex !== -1) {
+        // Se sim, apenas atualizar a quantidade e o total
+        carrinho[itemIndex].quantidade++;
+        carrinho[itemIndex].subtotal += preco;
+    } else {
+        // Se não, adicionar um novo item ao carrinho
+        carrinho.push({
+            nome: nome,
+            preco: preco,
+            quantidade: 1,
+            subtotal: preco
+        });
+    }
+    
+    total += preco;
+    atualizarCarrinho();
 }
 
-// Função para adicionar o produto ao carrinho no armazenamento local
-function addProductToCart() {
-    let title = document.querySelector(".product-title").innerText;
-    let price = document.querySelector(".product-price").innerText;
-
-    let newCartProduct = document.createElement("tr");
-    newCartProduct.classList.add("cart-product");
-
-    newCartProduct.innerHTML =
-        `
-        <td class="product-identification">
-            <strong class="cart-product-title">${title}</strong>
-        </td>
-        <td>
-            <span class="cart-product-price">${price}</span>
-        </td>
-        <td>
-            <input class="product-qtd-input" type="number" value="1" min="0">
-            <button class="remove-product-button" type="button">Remover</button>
-        </td>
-    `;
-
-    let tableBody = document.querySelector("#tbody-carrinho");
-    tableBody.append(newCartProduct);
-    updateTotal();
+function removerItem(index) {
+    total -= carrinho[index].subtotal;
+    carrinho.splice(index, 1);
+    atualizarCarrinho();
 }
 
+function atualizarCarrinho() {
+    const listaItens = document.getElementById('itens-carrinho');
+    const totalElemento = document.getElementById('total');
 
-// Função para remover um produto do carrinho
-function removeProduct(event) {
-    event.target.parentElement.parentElement.remove();
-    updateTotal();
-}
-
-// Função para calcular e atualizar o total do carrinho
-function updateTotal() {
-    let totalCarrinho = 0;
-    const cartProducts = document.getElementsByClassName("cart-product");
-    for (var i = 0; i < cartProducts.length; i++) {
-        const productPrice = parseFloat(cartProducts[i].querySelector(".cart-product-price").innerText.replace("R$", "").replace(",", "."));
-        const productQuantity = parseFloat(cartProducts[i].querySelector(".product-qtd-input").value);
-
-        totalCarrinho += productPrice * productQuantity;
+    // Verificar se os elementos foram encontrados antes de tentar acessá-los
+    if (!listaItens || !totalElemento) {
+        console.error("Elementos 'itens-carrinho' ou 'total' não foram encontrados.");
+        return; // Encerra a função se os elementos não foram encontrados
     }
 
-    totalCarrinho = totalCarrinho.toFixed(2);
-    totalCarrinho = totalCarrinho.replace(".", ",");
-    document.querySelector(".card-total-container span").innerHTML = "R$" + totalCarrinho;
+    listaItens.innerHTML = '';
+    carrinho.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.nome} - Quantidade: ${item.quantidade} - Subtotal: R$${item.subtotal.toFixed(2)}`;
+        const button = document.createElement('button');
+        button.textContent = 'Remover';
+        button.classList.add("remove-product-button");
+        button.onclick = () => removerItem(index);
+        li.appendChild(button);
+        listaItens.appendChild(li);
+    });
+
+    totalElemento.textContent = total.toFixed(2);
+
+    // Salvar carrinho no localStorage
+    localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
