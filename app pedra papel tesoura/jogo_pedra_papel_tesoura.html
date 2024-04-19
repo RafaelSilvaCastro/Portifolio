@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <style>
+
+            body{
+                background-color: black;
+                color: antiquewhite;
+            }
+            tr{
+                color: antiquewhite;
+            }
+            .player-options img, .enemy-options img{
+                max-width: 200px;
+                opacity: 0.3;
+                cursor: pointer;
+            }
+
+            
+            .align{
+                justify-content: center;
+                display: flex;
+            }
+
+            .align h3{
+                text-align: center;
+                font-size: 25px;
+            }
+
+            .align h3.p1{
+                color: blue;
+            }
+
+            .align h3.p2{
+                color: red;
+            }
+
+            h2{
+                text-align: center;
+            }
+        </style>
+
+        <h1 style="text-align: center;">Pedra, Papel ou Tesoura</h1>
+        <h2 class="vencedor"></h2>
+        <hr>
+        <div class="align">
+            <div class="player-options">
+                <h3 class="p1">Player 1</h3>
+                <div><img opt="pedra" src="rock.png" /></div>
+                <div><img opt="papel" src="paper.png" /></div>
+                <div><img opt="tesoura" src="scisor.png" /></div>
+            </div>
+            <div class="enemy-options">
+                <h3 class="p2">Player 2</h3>
+                <div><img opt="pedra" src="rock.png" /></div>
+                <div><img opt="papel" src="paper.png" /></div>
+                <div><img opt="tesoura" src="scisor.png" /></div>
+            </div>
+        </div>
+        <script src="jogo_pedra.js"></script>
+
+    </body>
+</html>
