@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -9,57 +9,13 @@
     <link rel="stylesheet" href="../css/styleloja.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
+  
+    
     <title>Loja</title>
 </head>
 
 <body>
-    <nav class="menu-lateral">
-
-        <div class="btn-expandir">
-            <i class="bi bi-list" id="btn-exp"></i>
-        </div>
-
-        <ul>
-            <li class="item-menu">
-                <a href="../usuario/home.html">
-                    <span class="icon"><i class="bi bi-house-door-fill"></i></span>
-                    <span class="txt-link">Inicio</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="../usuario/academias.html">
-                    <span class="icon"><i class="bi bi-geo-alt"></i></span>
-                    <span class="txt-link">Academias</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="../usuario/conta_usuario.html">
-                    <span class="icon"><i class="bi bi-person-circle"></i></span>
-                    <span class="txt-link">Conta</span>
-                </a>
-            </li>
-            <li class="item-menu ativo">
-                <a href="loja.html">
-                    <span class="icon"><i class="bi bi-bag"></i></span>
-                    <span class="txt-link">Loja</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="#">
-                    <span class="icon"><i class="bi bi-gear"></i></span>
-                    <span class="txt-link">Suporte</span>
-                </a>
-            </li>
-            <li class="item-menu">
-                <a href="../fechar_sessao.html">
-                    <span class="icon"><i class="bi bi-door-open"></i></span>
-                    <span class="txt-link">Sair</span>
-                </a>
-            </li>
-
-        </ul>
-    </nav>
-    <script src="../js/menu.js"></script>
+   
 
     <header>
         <div class="interface" style="margin-left: 150px;">
@@ -136,8 +92,8 @@
                             <h2>WHEY PROTEIN ISOLADO</h2>
                                 <p>R$130,55</p>
                                 <p><del>R$145,45</del></p>
-                                <center><a href="../loja/carrinho.html"><button class="btn btn-third"> ADICIONAR AO CARRINHO</button></a></center>
-                        </div><!--produtos-box-->
+                                <center><button type="button" class="btn" onclick="adicionarItem(150.55)">ADICIONAR AO CARRINHO</button></center>
+                            </div><!--produtos-box-->
                     </div><!--flex-->
                 </div><!--interface-->
             </section><!--especialidades-->
@@ -177,7 +133,7 @@
 
     </main>
     <br><br><br><br><br><br>
-    <script src="../js/galery.js"></script>
+    
 
 
     <div class="interface">
@@ -188,6 +144,10 @@
                 </div>
             </div>
         </footer>
+
+        <script src="../js/galery.js"></script>
+        <script src="../js/carrinho.js"></script>
+    
 </body>
 
 </html>

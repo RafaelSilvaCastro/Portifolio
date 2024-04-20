@@ -410,6 +410,28 @@ header.btn-links {
     padding: 40px;
 }
 
+/*estilo botao*/
+
+.btn{
+    display: flex;
+    margin: 24px auto 0;
+    border-radius: 15px;
+    text-transform: uppercase;
+    background-color: #9c0000;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: auto;
+    align-self: center;
+    border: none;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    filter: brightness(0.8);
+}
 
 /* estilo prod */
 

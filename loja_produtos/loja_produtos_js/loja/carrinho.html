@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="/img/mini_logo.png" href="../img/logobranco.png">
+    <link rel="shortcut icon" type="image/png" href="../img/mini_logo.png">
     <link rel="stylesheet" href="../css/stylecarrinho.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
-    <title>Loja</title>
+    <title>Loja | Carrinho</title>
 </head>
+
 <body>
 
-<header>
+    <header>
         <div class="interface" style="margin-left: 150px;">
             <div class="logo">
-            <a href="../loja/loja.html">
+                <a href="../loja/loja.html">
                     <img src="../img/logo.png" alt="Logo Alpha MT">
                 </a>
             </div><!--logo-->
@@ -23,44 +25,49 @@
             <div class="navbar">
                 <div class="header-inner-content">
                     <ul>
-                        <a href="whey.html"><li>Whey Protein</li></a>
-                        <a href="creatina.html"><li>Creatina</li>
-                        <a href="pretreino.html"><li>Pre-Treino</li>
-                        <a href="roupas.html"><li>Roupas</li>
-                        <a href="acessorios.html"><li>Acessorios</li>
+                        <a href="whey.html">
+                            <li>Whey Protein</li>
+                        </a>
+                        <a href="creatina.html">
+                            <li>Creatina</li>
+                        </a>
+                        <a href="pretreino.html">
+                            <li>Pre-Treino</li>
+                        </a>
+                        <a href="roupas.html">
+                            <li>Roupas</li>
+                        </a>
+                        <a href="acessorios.html">
+                            <li>Acessórios</li>
+                        </a>
                     </ul>
                 </div>
             </div>
             <div class="nav-icon-container">
-            <a href="carrinho.html"> <i class="bi bi-cart"></i></a>
-            <i class="bi bi-list" id="btn-exp"></i>
+                <a href="carrinho.html"> <i class="bi bi-cart"></i></a>
+                <i class="bi bi-list" id="btn-exp"></i>
             </div>
-        </div><!--inteface-->
+        </div><!--interface-->
     </header>
-    <script src="../js/menu.js"></script>
+
 
     <main>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        
-        <div class="container-carrinho">
-                <h2>Carrinho de Compras</h2>
-        <div class="lista-cadastro">
-            <input type="text" placeholder="nome do produto..." name="nome_produto"/>
-            <input type="number" name="price" step="0.01" title="This should be a number with up to 2 decimal"/>
-            <input type="submit" name="acao" value="cadastrar"/>
-        </div>
 
-        <div class="lista-produtos">
-
-        </div>
-
-        <div class="soma-produtos">
-            <h1>Total: R$0</h1>
-        </div>
-
-        <button name="limpar">limpar</button>
-    </div>
+        <section>
+            <center>
+            <div id="carrinho">
+                <h2>Carrinho</h2>
+                <ul id="itens-carrinho" class="itens-carrinho">
+                    <!-- Itens do carrinho serão adicionados aqui -->
+                </ul>
+                <p>Total: R$<span id="total" class="total">0.00</span></p>
+            </div>
+        </center>
+        </section>
     </main>
-    
+
+    <script src="../js/carrinho.js"></script>
 </body>
+
 </html>
