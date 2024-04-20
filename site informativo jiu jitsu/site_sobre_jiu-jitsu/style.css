@@ -1,0 +1,155 @@
+body {
+    background-image: url(img/fund2.jpg);
+    color: bisque;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    margin: 0;
+    color: bisque;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h2 {
+    color:#f1e9df;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container {
+    max-width: 1920px;
+    width: 100%;
+  }
+
+  /* header */
+  header { 
+    position: relative;
+    top: 0;
+    height: auto;
+    width: 100%;
+  }
+
+  /* nav bar*/
+  nav {
+    position: fixed;
+    top: 0;
+    height:100px ;
+    width: 100%;
+    z-index: 1;
+    background-color: #000000;
+    border-bottom: 1px solid #000000 ;
+  }
+
+  nav::after {
+    clear: both;
+    content: "";
+    display: block;
+  }
+
+  .nav-container {
+   max-width: 1200px;
+   position: relative;
+   margin-right: auto;
+   margin-left: auto; 
+  }
+
+  #logo {
+    width: 50px;
+    height: 50px;
+    margin-top: 20px;
+    float: right;
+    line-height: 100px;
+  }
+
+  .nav-container ul {
+    float: right;
+    height: 100px;
+    line-height: 100px;
+    margin: 0%;
+    list-style: none;
+    }
+
+  .nav-container li {
+  list-style: none;
+  float: right; 
+  margin: 0 15px;
+  }
+
+  .nav-container li a {
+    text-decoration: none;
+    color:#ffffff;
+    transition:0.4s;
+  }
+
+  .nav-container li a:hover {
+    color: #810e0e ;
+  }
+
+  #posição_texto {
+  width: 950px;
+  height: auto;
+  margin: auto;
+  background-color: #000000;
+  opacity: 2;
+  padding: 30px 30px;
+  border: none;
+  }
+  
+#img1{
+  position: middle;
+}
+
+.borda_texto{
+  width: 350px;
+  margin: 50px;
+  border: 7px solid #999;
+}
+
+.lado{
+  display: inline-block;
+}
+  a:link{
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    color:aliceblue;
+  }
+  a:visited{
+    color: antiquewhite;
+  }
+
+a:hover{
+  color:aqua;
+}
+a:active{
+  color:aquamarine
+}
+button{
+  background-color: #810e0e;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.float-banner {
+  position: absolute;
+  left: -2%;
+  width: 200px;
+  height: 200px;
+  margin-top: 0px;
+  margin-left: -500px;
+}
+.float-banner1 {
+  position: absolute;
+  left: 125%;
+  width: 200px;
+  height: 200px;
+  margin-top: 0px;
+  margin-right: -500px;
+}
