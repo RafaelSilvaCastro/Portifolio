@@ -25,7 +25,7 @@
 
 - Jogo RPG: Jogo desenvolvido em python, onde e feito eventos de um jogo de RPG, tendo uma historia por tras.
 
-- Jogo Flappy Bird: Jogo desenvolvido em Python onde replica o prprio jogo Flappy Bird
+- Jogo Flappy Bird: Jogo desenvolvido em Python onde replica o prprio jogo Flappy Bird.
 
 <!--
 
