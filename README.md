@@ -8,13 +8,23 @@
   HTML, CSS e JS
 
 </div>
-- Loja de suplementos: Será implementado um carrinho usando JavaScript(Em desenvolvimento).
 
- Jogo Pedra Papel e Tesoura: Um jogo desenvolvido em Html e JavaScript, onde você joga contra a maquina. 
+- Site informativo de Jiu-Jitsu: Um site de conteudo sobre Jiu-jitsu desenvolvido em HTML e CSS.
+
+- Loja de suplementos: Está e uma loja de suplementos(ficticio) onde será implementado um carrinho usando JavaScript(Em desenvolvimento).
+
+ - Jogo Pedra Papel e Tesoura: Um jogo desenvolvido em Html, CSS e JavaScript, onde você joga contra a maquina. 
  
- Site informativo de Jiu-Jitsu: Um site desenvolvido em HTML e CSS.
+- Pokedex: App desenvolvido em HTML, CSS e JavaScript onde puxa pokemons de uma API.
 
- Pokedex: App desenvolvido em JavaScript onde puxa as imagens de uma API.
+<div style="display: inline_block"><br>
+  <img align="center" alt="Rafa-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+</div>
+Python
+
+- Jogo RPG: Jogo desenvolvido em python, onde e feito eventos de um jogo de RPG, tendo uma historia por tras.
+
+- Jogo Flappy Bird: Jogo desenvolvido em Python onde replica o prprio jogo Flappy Bird
 
 <!--
 
