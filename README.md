@@ -8,7 +8,7 @@
   HTML, CSS e JS
 
 </div>
- Loja de suplementos: Será implementado um carrinho usando JavaScript(Em desenvolvimento).
+ <bold>Loja de suplementos:</bold> Será implementado um carrinho usando JavaScript(Em desenvolvimento).
 
  Jogo Pedra Papel e Tesoura: Um jogo desenvolvido em Html e JavaScript, onde você joga contra a maquina. 
  
