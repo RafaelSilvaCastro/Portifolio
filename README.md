@@ -1,7 +1,7 @@
 # Portifolio
- Meu portifolio de criações proprias.
+ ## Meu portifolio de criações proprias.
 
-<div style="display: inline_block"><br>
+## <div style="display: inline_block"><br>
   <img align="center" alt="Rafa-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="Rafa-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
   <img align="center" alt="Rafa-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">  
@@ -16,6 +16,11 @@
  - Jogo Pedra Papel e Tesoura: Um jogo desenvolvido em Html, CSS e JavaScript, onde você joga contra a maquina. 
  
 - Pokedex: App desenvolvido em HTML, CSS e JavaScript onde puxa pokemons de uma API.
+
+| Site | Arquivos |
+|------|----------|
+
+
 
 <div style="display: inline_block"><br>
   <img align="center" alt="Rafa-Python" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
