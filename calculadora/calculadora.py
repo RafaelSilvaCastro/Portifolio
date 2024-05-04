@@ -17,7 +17,7 @@ janela.resize(330,480)
 janela.setWindowTitle("Calculadora")
 
 # chamar o css no python
-with open("python_senai/aula0405/atividade_calculadora/style.css", "r") as file:
+with open("calculadora/style.css", "r") as file:
     app.setStyleSheet(file.read())
     
 
