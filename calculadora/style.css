@@ -1,0 +1,21 @@
+QWidget{
+    background-color: #5B3256;
+    color: white;
+    font-family: "Lucida Console";
+}
+
+QLineEdit{
+    background-color: #9D7CBF;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+QPushButton{
+    background-color: #9D7CBF;
+    ;
+    font-size: 15px;
+    color: black;
+    border-radius: 10px;
+}
