@@ -17,7 +17,7 @@ dadosPessoas = dados.informacoes()
 import reconhecimento_caracter
 # criar uma função para reconhecer os caracteres
 def buscar():
-    placaReconhecida = reconhecimento_caracter.reconhecer('python_senai/05/monitoriamento_veicular/placas/placa4.jpg') #mudar o caminho da imagem
+    placaReconhecida = reconhecimento_caracter.reconhecer('monitoramento_veicular/monitoramento_veicular/placas/placa4.jpg') #mudar o caminho da imagem
     
     # verificando se no meio dos textos reconhecidos tem a placa cadastrada
     for p in dadosPessoas:
@@ -34,8 +34,8 @@ def abrirCamera():
         
         # verificar se na imagem capturada esta a nossa placa
         # convertendo o frame em imagem
-        cv2.imwrite("python_senai/05/monitoriamento_veicular/placas/placaCapturada.jpg", frame) #mudar o caminho da imagem
-        placaReconhecida = reconhecimento_caracter.reconhecer("python_senai/05/monitoriamento_veicular/placas/placaCapturada.jpg") #mudar o caminho da imagem
+        cv2.imwrite("monitoramento_veicular/monitoramento_veicular/placas/placaCapturada.jpg", frame) #mudar o caminho da imagem
+        placaReconhecida = reconhecimento_caracter.reconhecer("monitoramento_veicular/monitoramento_veicular/placas/placaCapturada.jpg") #mudar o caminho da imagem
                 
         # loop para ahar o dono da placa
         for p in dadosPessoas:
@@ -70,7 +70,7 @@ janela.resize(400,400)
 janela.setWindowTitle("Monitoramento Veicular")
 
 # chamar o css no python
-with open("python_senai/05/monitoriamento_veicular/style.css", "r") as file:
+with open("monitoramento_veicular/monitoramento_veicular/style.css", "r") as file:
     app.setStyleSheet(file.read())
     
 
